@@ -17,11 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Configure CMake
-        run: | 
-          mkdir third-party
-          mkdir artifacts
-          git submodule add https://github.com/google/googletest third-party/gtest
-          cd third-party/gtest && git checkout release-1.11.0 && cd ../..
+        run: |
           cmake -B_build
 
       - name: Build project
