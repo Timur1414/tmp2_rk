@@ -4,15 +4,6 @@ project(RAII_Idiom_Project)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(BUILD_TESTS "Build tests" OFF)
-set(SOURCES
-    Clipboard.cpp
-    ConceptualExample.cpp
-    Dummy.cpp
-    Program.cpp
-    RAII_File.cpp
-    RAII_Ofstream.cpp
-)
-add_executable(RAII_Idiom_Project ${SOURCES})
 
 if(BUILD_TESTS)
     include_directories(.)
@@ -25,4 +16,14 @@ if(BUILD_TESTS)
          target_link_libraries(check gtest_main gmock_main dummy)
          add_test(NAME check COMMAND check)
     endforeach(test ${tests})
+else()
+    set(SOURCES
+        Clipboard.cpp
+        ConceptualExample.cpp
+        Dummy.cpp
+        Program.cpp
+        RAII_File.cpp
+        RAII_Ofstream.cpp
+    )
+    add_executable(RAII_Idiom_Project ${SOURCES})
 endif()
