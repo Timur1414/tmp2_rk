@@ -19,6 +19,7 @@ jobs:
       - name: Configure CMake
         run: |
           cmake -B_build
+          dir
           tree _build
           mkdir artifacts
           mv _build artifacts
@@ -26,7 +27,7 @@ jobs:
       - name: Build project
         run: cmake --build _build
         
-      - name: Archive artifacts
+      - name: Archive
         uses: actions/upload-artifact@v4
         with:
           name: artifacts
