@@ -25,4 +25,4 @@ jobs:
           cmake -B_build
 
       - name: Build project
-        run: cmake --build _build --config Release
+        run: cmake --build _build
