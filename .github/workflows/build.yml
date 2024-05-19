@@ -19,6 +19,7 @@ jobs:
       - name: Configure CMake
         run: |
           cmake -B_build
+          tree _build
 
       - name: Build project
         run: cmake --build _build
